@@ -1,0 +1,12 @@
+.alert-container{ 
+    color: black;
+    border-radius: 10px;
+    width: 80%;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif    ;
+} 
+.boton{ 
+    margin: 10px;
+}
