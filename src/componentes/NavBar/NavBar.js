@@ -1,7 +1,7 @@
 import ReplaceImg from '../../assets/replace.png'
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-import {CartWidget} from '../Carrito/CartWidget'
+import {CartWidget} from '../carrito/CartWidget'
 
 export default class NavbarComp extends Component {
     render(){

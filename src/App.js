@@ -1,10 +1,8 @@
 import "./App.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {ItemListNew} from './components/ItemList/ItemList'
-import NavbarComp from './components/NavBar/NavBar';
-import NavBarComp from './componentes/NavBar/NavBarComp';
-import React from 'react';
-import carro from './assets/carro.png';
+import {ItemListNew} from './componentes/ItemList/ItemList'
+import NavbarComp from './componentes/NavBar/NavBar';
+
 function App() {
   return (
     <>
@@ -17,5 +15,3 @@ function App() {
 }
 
 export default App;
-
-

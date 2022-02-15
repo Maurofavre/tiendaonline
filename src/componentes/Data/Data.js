@@ -14,7 +14,7 @@ const productos = [
         //pictureUrl
     },
         {id: 3, 
-        title: 'Iphone', 
+        title: 'Ipho', 
         description: 'Nuevo', 
         price: 300, 
         //pictureUrl
