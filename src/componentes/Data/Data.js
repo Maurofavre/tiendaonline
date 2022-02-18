@@ -1,30 +1,31 @@
+import Herrajes from '../../assets/herrajes.jpg'
+import Vigas from '../../assets/vigas.jpg'
+import Machimbre from '../../assets/machimbre.jpg'
+
+
 const productos = [
 	{
         id: 1, 
-        title: 'Samsung', 
+        title: 'HERRAJES', 
         description: 'Nuevo', 
-        price: 50, 
-        //pictureUrl
+        price: 40, 
+        img: Herrajes
+       
     },
     {
         id: 2, 
-        title: 'Motorola', 
+        title: 'VIGAS', 
         description: 'Nuevo', 
         price: 150, 
-        //pictureUrl
+        img: Vigas
     },
         {id: 3, 
-        title: 'Ipho', 
+        title: 'MACHIMBRES', 
         description: 'Nuevo', 
         price: 300, 
-        //pictureUrl
+        img: Machimbre 
     },
-        {id: 4, 
-        title: 'Nokia', 
-        description: 'Nuevo', 
-        price: 120, 
-        //pictureUrl
-    }
+      
 ]
 
 export default productos

@@ -13,8 +13,9 @@ export const Item = ({products}) => {
                             <div className='itemContainer__img'></div>
                             <div className='itemContainer__info'>
                                 <span className='item__price'>{p.price}</span>
-                                <div to={p.id}>'
+                                <div to={p.id}>
                                 <h2>{p.title}</h2>
+                               
                                 </div>
                                 <ItemCount initial={1} stock={3} onAdd={onAdd}/>
                             </div>

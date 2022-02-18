@@ -1,0 +1,6 @@
+.ReplaceImg { 
+    width: 130px;
+    height: 130px;
+    align-items: CE;
+}
+.header {display: grid; grid-template-columns: 1fr 1fr 1fr;}

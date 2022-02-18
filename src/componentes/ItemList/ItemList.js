@@ -37,7 +37,7 @@ export const ItemListNew = (props) =>{
     return(
         <div style={{textAlign:'center'}}>
             {loading && <p>LOADING...</p> }
-            {products.map(product => <ItemCard title={product.title} sub={product.sub} price={product.price} onAddCard={(evento) => console.log(evento)}/>)}
+            {products.map(product => <ItemCard title={product.title} sub={product.sub} price={product.price} img={product.img} onAddCard={(evento) => console.log(evento)}/>)}
         </div>
     )
 }
