@@ -1,27 +1,18 @@
-import ItemCount from '../ItemCount/ItemCount'
 
-export const Item = ({products}) => {
-    const onAdd = () => {
-    }
+export const Item = ({id, stock, title, img, price}) => {
+    
 
-    return (
-        <>
-            {
-                products.map(p =>
-                    <div key={p.id} sm={6} md={4} lg={4} xxl={3}>
-                        <div className='itemContainer'>
-                            <div className='itemContainer__img'></div>
-                            <div className='itemContainer__info'>
-                                <span className='item__price'>{p.price}</span>
-                                <div to={p.id}>
-                                <h2>{p.title}</h2>
-                               
-                                </div>
-                                <ItemCount initial={1} stock={3} onAdd={onAdd}/>
-                            </div>
-                        </div>
-                    </div>)
-            }
+return (
+        <>            
+<div key={id}  className="card" style= {{width: "18rem", alignItems: "center", margin:"20px"}}>
+               <img className="card-img-top" src= {img} alt="image"/>
+      <div className="card-body">
+                <h5 className="card-title">{title}</h5>
+               <p className="card-text">  Precio:${price} </p>
+              <button className="btn btn-primary">Informacion</button>
+    </div>
+</div>
+           
         </>
     )
 }

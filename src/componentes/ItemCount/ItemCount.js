@@ -1,35 +1,36 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
-export const ItemCount = () =>{
-    
-    //const [count, setCount] = useState(initial);
+const ItemCount = ({stock, initial, onAdd}) =>{
 
-    // const sumar = () => {
-    //     if (count < stock){
-    //     setCount(count+1);
-    // }   else{
-    //     alert('No tenemos mas stock')
-    //     }
-    // }
-    
-    // const restar = () => {
-    //     if (count > 1){
-    //     setCount(count-1);
-    //     }
-    // }
+    // const inicial = parseInt(initial);
+    const [count, setCount] = useState(initial);
+
+    const sumar = () => {
+        if (count < stock){
+        setCount(count+1);
+    }   else{
+        alert('No tenemos mas stock')
+        }
+    }
+
+    const restar = () => {
+        if (count > initial){
+        setCount(count-1);
+        }
+    }
 
     // const addCart = () => {
     //     onAdd(count)
     // }
 
     return(
-        <div>
-            <div>
-                {/* <p style={{fontSize: '1rem', paddingTop:'8px'}}>Cantidad: {count} </p>
-                <button className="botonModif" onClick={restar}>-</button>
-                <button className="botonAgregar" onClick={onAdd}>Agregar</button>
-                <button className="botonModif" onClick={sumar}>+</button> */}
-            </div>
-        </div>
+       <>
+            <p>Cantidad: {count}</p>
+                <button className="btn btn-secondary" style={{margin:"5px"}} onClick={restar}>-</button>
+                <button className="btn btn-primary" >Comprar</button>
+                <button className="btn btn-secondary" style={{margin:"5px"}} onClick={sumar}>+</button>
+
+        </>
     )
 }
+export default ItemCount

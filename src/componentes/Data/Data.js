@@ -9,7 +9,7 @@ const productos = [
         title: 'HERRAJES', 
         description: 'Nuevo', 
         price: 40, 
-        img: Herrajes
+        pictureUrl: Herrajes
        
     },
     {
@@ -17,13 +17,13 @@ const productos = [
         title: 'VIGAS', 
         description: 'Nuevo', 
         price: 150, 
-        img: Vigas
+        pictureUrl: Vigas
     },
         {id: 3, 
         title: 'MACHIMBRES', 
         description: 'Nuevo', 
         price: 300, 
-        img: Machimbre 
+        pictureUrl: Machimbre 
     },
       
 ]

@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import {CartWidget} from '../carrito/CartWidget'
 import "./Estilo.css"
+
+
+
 export default class NavbarComp extends Component {
     render(){
         return(
@@ -10,6 +13,7 @@ export default class NavbarComp extends Component {
                 <Navbar bg="dark" variant="dark"
                 sticky='top' expand='lg'>
                     <Navbar.Brand>
+                        
                         <img src={ReplaceImg} className="ReplaceImg"/>
                     </Navbar.Brand>
 
