@@ -1,5 +1,5 @@
 
-export const Item = ({id, stock, title, img, price}) => {
+export const Item = ({id, title, img, price}) => {
     
 
 return (
@@ -10,6 +10,7 @@ return (
                 <h5 className="card-title">{title}</h5>
                <p className="card-text">  Precio:${price} </p>
               <button className="btn btn-primary">Informacion</button>
+              
     </div>
 </div>
            

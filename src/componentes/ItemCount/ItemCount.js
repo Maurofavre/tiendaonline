@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 const ItemCount = ({stock, initial, onAdd}) =>{
 
-    // const inicial = parseInt(initial);
+    
     const [count, setCount] = useState(initial);
 
     const sumar = () => {
@@ -26,6 +26,7 @@ const ItemCount = ({stock, initial, onAdd}) =>{
     return(
        <>
             <p>Cantidad: {count}</p>
+            
                 <button className="btn btn-secondary" style={{margin:"5px"}} onClick={restar}>-</button>
                 <button className="btn btn-primary" >Comprar</button>
                 <button className="btn btn-secondary" style={{margin:"5px"}} onClick={sumar}>+</button>

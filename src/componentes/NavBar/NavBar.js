@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import {CartWidget} from '../carrito/CartWidget'
 import "./Estilo.css"
-
+import { Link } from 'react-router-dom'
 
 
 export default class NavbarComp extends Component {
@@ -22,17 +22,21 @@ export default class NavbarComp extends Component {
                     <Navbar.Toggle />
                     <Navbar.Collapse>
                     <Nav  style={{alignItems:'center'}}>
-                        <NavDropdown title='Equipos'>
-                        <NavDropdown.Item href='equipos/iphone'>Machimbres</NavDropdown.Item>
-                        <NavDropdown.Item href='equipos/samsung'>VIGAS</NavDropdown.Item>
-                        <NavDropdown.Item href='equipos/motorola'>HERRAJES</NavDropdown.Item>
+                        <NavDropdown title='Productos'>
+                        <NavDropdown.Item href='equipos/machimbres'>Machimbres</NavDropdown.Item>
+                        <NavDropdown.Item href='equipos/vigas'>VIGAS</NavDropdown.Item>
+                        <NavDropdown.Item href='equipos/herrajes'>HERRAJES</NavDropdown.Item>
                         
                         <NavDropdown.Divider/>
                         <NavDropdown.Item href='equipos/promo'>Promociones</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="redes">Redes</Nav.Link>
-                        <Nav.Link href="contact">Contacto</Nav.Link>
-                        <Nav.Link href="about">Carrito</Nav.Link>
+                        <Link style={{color:'white', fontSize:18, padding:5}} to="/">Home</Link>
+                        <Link style={{ color:'white', fontSize:18, padding:5}} to="/items">Productos</Link>
+                        <Link style={{color:'white', fontSize:18, padding:5}} to="/contacto">Contacto</Link> 
+
+
+
+                        
                         <CartWidget/>
                     </Nav>
                     </Navbar.Collapse>

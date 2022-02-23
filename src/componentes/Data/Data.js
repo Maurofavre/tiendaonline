@@ -8,21 +8,22 @@ const productos = [
         id: 1, 
         title: 'HERRAJES', 
         description: 'Nuevo', 
-        price: 40, 
+        price: 150, 
         pictureUrl: Herrajes
        
     },
+    
     {
         id: 2, 
         title: 'VIGAS', 
         description: 'Nuevo', 
-        price: 150, 
+        price: 4500, 
         pictureUrl: Vigas
     },
         {id: 3, 
         title: 'MACHIMBRES', 
         description: 'Nuevo', 
-        price: 300, 
+        price: 290, 
         pictureUrl: Machimbre 
     },
       

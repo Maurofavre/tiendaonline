@@ -1,19 +1,35 @@
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from '../ItemCount/ItemCount'
+import '../ItemListContainer/ItemListContainer.css'
+import { useParams } from 'react-router-dom'
+import data from '../Data/Data'
+import '../ItemDetail/ItemDetail.css'
 
-export const ItemDetail = ({id, stock, title, img, price}) => {
-    
+ export const ItemDetail = (props) =>{
 
-    return (
-            <>            
-    <div key={id}  className="card" style= {{width: "18rem", alignItems: "center", margin:"20px"}}>
-                   <img className="card-img-top" src= {img} alt="image"/>
-          <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                   <p className="card-text">  Precio:${price} </p>
-                  <ItemCount stock={5} initial={1}/>
-        </div>
-    </div>
-               
-            </>
-        )
-    }
+    // const {itemName} = useParams();
+    // console.log('itemName', itemName);
+
+    const proid = useParams();
+    const proDetail = data.filter(x=>x.id == proid.id)
+    const product = proDetail[0];
+    console.log(product);
+
+     return(
+        <>
+        <div className='container'>
+            <div className='row' style={{textAlign:'justify'}}>
+                <div className='col-md-6' style={{marginTop: '1rem'}}> 
+                    <img className="card-img-top" src={product.pictureUrl} alt="Imagen"></img> 
+                </div>
+                <div className='col-md-6' style={{marginTop: '1rem', marginBottom: '1.5rem'}}>
+                    <h5 className="card-title"> {product.title}</h5>
+                    <p>Detalle del Producto: {product.description}</p>
+                    <h3>Precio: ${product.price}</h3>
+                    <p>Stock: {product.stock}</p>
+                    <ItemCount stock={product.stock} initial={1} />
+                </div>
+            </div>
+            </div>
+        </>
+     )
+}

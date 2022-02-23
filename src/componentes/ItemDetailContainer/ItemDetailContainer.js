@@ -1,15 +1,11 @@
 import { ItemDetail } from '../ItemDetail/ItemDetail'
-import data from '../Data/Data'
+import '../ItemListContainer/ItemListContainer.css'
 
-const productos = data; 
-
-
-export const ItemDetailContainer = () => { 
-
-    
-    return (
-        <>
-        <ItemDetail/>
+ export const ItemDetailContainer = () => {
+     
+    return(
+        <>    
+            <ItemDetail/>
         </>
-    )
+     )
 }

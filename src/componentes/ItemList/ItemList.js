@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { Item } from '../Item/Item'
 import data from '../Data/Data'
-import { ItemDetail } from "../ItemDetail/ItemDetail";
+
  
 const productos = data;
 
