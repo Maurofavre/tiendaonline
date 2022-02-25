@@ -7,7 +7,7 @@ const ItemCount = ({stock, initial, onAdd}) =>{
 
     const sumar = () => {
         if (count < stock){
-        setCount(count+1);
+        setCount(count + 1);
     }   else{
         alert('No tenemos mas stock')
         }

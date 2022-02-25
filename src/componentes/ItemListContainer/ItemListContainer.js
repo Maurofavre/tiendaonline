@@ -38,10 +38,10 @@ const productos = data;
             <div className="row justify-content-center">
             {
                 products.map(product => 
-                    <Link to={`/items/${product.id}`}>
+                    
                         <Item id={product.id} title={product.title} img={product.pictureUrl} 
                         price={product.price} onAddCard={(e) => console.log(e)}/>
-                    </Link>
+                    
                 )
             }
             </div>

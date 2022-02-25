@@ -22,10 +22,11 @@ import '../ItemDetail/ItemDetail.css'
                     <img className="card-img-top" src={product.pictureUrl} alt="Imagen"></img> 
                 </div>
                 <div className='col-md-6' style={{marginTop: '1rem', marginBottom: '1.5rem'}}>
-                    <h5 className="card-title"> {product.title}</h5>
-                    <p>Detalle del Producto: {product.description}</p>
+                   <u><center><b> <h5 className="card-title"> {product.title}</h5></b></center></u>
+                    <p><b>Detalle del Producto:</b> {product.description}</p>
                     <h3>Precio: ${product.price}</h3>
                     <p>Stock: {product.stock}</p>
+                    
                     <ItemCount stock={product.stock} initial={1} />
                 </div>
             </div>
