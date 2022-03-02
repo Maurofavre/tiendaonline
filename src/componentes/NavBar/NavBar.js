@@ -4,9 +4,14 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import {CartWidget} from '../carrito/CartWidget'
 import "./Estilo.css"
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../Context';
+import { useContext } from 'react';
 
 
 export default class NavbarComp extends Component {
+
+//  const {cartCount} = useContext(CartContext) 
+
     render(){
         return(
             <div>
@@ -33,7 +38,7 @@ export default class NavbarComp extends Component {
                         <Link style={{color:'white', fontSize:18, padding:5}} to="/">Home</Link>
                         <Link style={{ color:'white', fontSize:18, padding:5}} to="/items">Productos</Link>
                         <Link style={{color:'white', fontSize:18, padding:5}} to="/contacto">Contacto</Link> 
-
+                        <Link style={{color:'white', fontSize:18, padding:5}} to="/cart">Carrito</Link> 
 
 
                         

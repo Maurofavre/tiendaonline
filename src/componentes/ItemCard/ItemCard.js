@@ -47,7 +47,7 @@ export const ItemCard = (props) =>{
                 
                 <p style={{fontSize: '1rem', paddingTop:'8px'}}>Cantidad: {count} </p>
                 <button className="botonModif" onClick={restar}>-</button>
-                 <button className="botonAgregar" onClick={onAdd}>Agregar</button> 
+                 <button className="botonAgregar" onClick={onAdd}>Agar</button> 
                 <button className="botonModif" onClick={sumar}>+</button>
             </div>
             </div>
