@@ -7,7 +7,7 @@ export const Cart = (props) => {
   return (
       <>
     <div> Carrito  </div>
-    <div> {cartItems.length === 0 && <div> Chupala coder</div>} </div>
+    <div> {cartItems.length === 0 && <div> Aqui productos</div>} </div>
 
     </>
   )
