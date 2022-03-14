@@ -1,0 +1,4 @@
+.card{
+    .contenedor:hover .imagen {-webkit-transform:scale(1.3);transform:scale(1.3);}
+.contenedor {overflow:hidden;}
+}

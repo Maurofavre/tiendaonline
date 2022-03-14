@@ -9,32 +9,32 @@ import { ItemDetail } from "./componentes/ItemDetail/ItemDetail";
 import {Cart} from "./componentes/Cart/Cart";
 import { useState } from "react";
 import { CartProvider } from "./Context";
+import {Category} from "./views/Category"
 
 
 
+export function App() {
 
-function App() {
 
-const [ cartItems, setCartItems] = useState([]);
 
   return (
-    <BrowserRouter>
-       <CartProvider>
-    <NavBar/>
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/items/" element={<ItemListContainer/>} />
-      <Route path="/lista-productos" element={<ItemDetail/>} />
-      <Route path="/items/:id" element={<ItemDetailContainer/>} />
-      <Route path="/cart" element={<Cart cartItems={cartItems} />} />
-    </Routes>
-    </CartProvider>
+    <CartProvider>
+      <BrowserRouter>
+      
+         <NavBar/>
+        <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/lista-productos" element={<ItemDetail/>} />
+        <Route exact path='category/:categoryId/categoryName' element={<Category/>}/>
+        <Route path="/item/:id" element={<ItemDetailContainer/>} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
 
-  </BrowserRouter>
+    </BrowserRouter>
+  </CartProvider>
 );
 }
 
 export default App;
-
 
 

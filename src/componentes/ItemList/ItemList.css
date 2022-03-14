@@ -1,0 +1,29 @@
+.botonModif{ 
+    color: #000000;
+    background: transparent;
+    border: 2px solid #d55f1f; 
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #000000c7; 
+    padding: 8px; 
+}
+
+.botonAgregar{ 
+    color: #000000;
+    background: transparent;
+    border: 2px solid #d55f1f;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #000000c7; 
+    padding: 8px;  
+}
+
+.botonModif:hover, .botonAgregar:hover {
+    background-color: #d55f1f;
+    color: rgb(255, 255, 255);
+}
+
+.card:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;}
