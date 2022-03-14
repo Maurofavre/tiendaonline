@@ -15,12 +15,18 @@ const {items, addItem} = useContext(CartContext)
   {
 
 items.map((item)=> (
-  <div key={item.id}>
-    <h5> {item.count}</h5>
-    <h1>{item.name} </h1>
-    <img src={item.thumbnail} alt="foto" style={{ width: 200 }} ></img>
-    
-  </div>
+         
+         
+         
+         <center> <div  key={item.id} className='row justify-content-center'>
+
+          <h3>{item.name}</h3>
+          <p>Total=$ {item.price} x {item.count} </p>
+          <h5> Cantidad= {item.count}</h5>
+          <img src={item.thumbnail} alt="foto" style={{ width: 200 }} />
+
+
+          </div></center>
 ))
 
   }

@@ -24,7 +24,6 @@ const addItem = (item, count) => {
         return prod
       }))
       :
-     
        setItems([...items, {id: item.id, name: item.title, price: item.price, thumbnail:item.thumbnail, count: count}])
       console.log(items);
 }

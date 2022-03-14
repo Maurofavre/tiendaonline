@@ -18,7 +18,7 @@ useEffect(() => {
         .then((response) => response.json())
         .then(respJSON => {setItems(respJSON); setLoading(false)})
     
-    }, 2000)
+    }, 500)
 }, [params.id])
      
     return(

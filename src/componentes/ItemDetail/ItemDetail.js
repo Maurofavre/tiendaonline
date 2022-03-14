@@ -14,14 +14,14 @@ const {addItem} = useContext(CartContext)
 
   return (
     <>
-    <div className='container'>
+   <center> <div className='container'>
       <h3>{item.title}</h3>
       <p>${item.price}</p>
 
       <img src={item.thumbnail} alt="foto" style={{ width: 200 }} />
-     </div>
+     </div></center>
 
-    <div className='container'>
+     <center> <div className='container'>
      
           { add ? 
                 <p>Producto añadido al carrito</p>
@@ -33,7 +33,7 @@ const {addItem} = useContext(CartContext)
           <div>
               <Link to="/cart" type= "button" className="btn btn-success"> FINALIZAR COMPRA </Link>
           </div>
-    </div>
+    </div></center>
     </>
   );
 };
