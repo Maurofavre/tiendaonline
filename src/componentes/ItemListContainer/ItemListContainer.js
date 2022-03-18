@@ -1,49 +1,81 @@
+import '../ItemListContainer/ItemListContainer.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList/ItemList' 
- 
-export const ItemListContainer = ({categoryId, categoryName }) =>{
-  
-    const [products, setProducst] = useState([]);
+import { collection,getDocs } from 'firebase/firestore';
+import { db } from '../utils/firebases';
+import { useParams } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
-    useEffect(() => {
-      db();
-    }, [categoryId]);
+
+export const ItemListContainer = ({}) =>{
   
-    async function db() {
-      const call = await fetch(
-        `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=8 `
-      );
-      const result = await call.json();
-      setProducst(result.results);
+    const [Items, setItems] = useState([]);
+    const [load, setLoad] = useState (true)
+    const {categoryId} = useParams() 
+
+    // useEffect(() => {
+    //   db();
+    // }, [categoryId]);
+  
+    // async function db() {
+    //   const call = await fetch(
+    //     `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=8 `
+    //   );
+    //   const result = await call.json();
+    //   setProducst(result.results);
+    // }
+
+    const getData = async()=>{
+        try{
+            const productosCollection = collection(db, 'Items');
+            const response = await getDocs(productosCollection);
+            const result = response.docs.map(doc=>{return {id: doc.id, ...doc.data()}})
+            setItems(result)
+            
+           
+
+            }  catch (error) {
+                console.warn("error", error);
+            } 
     }
   
-    return (
-      <>
-      <div style={{textAlign: 'center'}}>
-        <h1>{categoryName}</h1>
-        <div className='row justify-content-center'>
 
-       {products.length === 0 ? (
-          <p>Loading...</p>
-        ) : (
-          products.map((product) => (
-            <ItemList 
-              key={product.id}
-              title={product.title}
-              price={product.price}
-              thumbnail={product.thumbnail}
-              id={product.id}
-            />
-          ))
-        )}</div>
+
+//   const getDataCategory = async(categoryId)=>{
+//     try{
+//         const productosCollection = collection(db, 'items');
+//         const response = await getDocs(productosCollection);
+//         const result = response.docs.map(doc=>{return {id: doc.id, ...doc.data()}})
+//         setProductos(result.filter(e=>e.categoryId === categoryId)) 
+
+//         } catch (error) {
+//             console.warn("error", error);
+//         } 
+// }
+
+useEffect(()=>{
+        getData()
+}, [categoryId])
+
+// console.log('productos: ', productos);
+    
+
+
+
+
+  return(
+    <>  
+    <div style={{textAlign: 'center'}}>             
+       <div className="container">
+            <div className="row">
+                    <ItemList items={Items}/>
+            </div>
         </div>
-      </>
-    );
-  };
-  
-
-
+    </div>
+    </>
+)
+}
 
 
 
