@@ -1,4 +1,5 @@
-.card{
-    .contenedor:hover .imagen {-webkit-transform:scale(1.3);transform:scale(1.3);}
-.contenedor {overflow:hidden;}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

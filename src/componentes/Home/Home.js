@@ -3,16 +3,15 @@ import { ItemListContainer } from '../ItemListContainer/ItemListContainer'
 
 export const Home = () => {
 
-    const text = 'TOLEDO MAESTRO'
+    const text = 'JUAN LAMBERTUCCI SRL'
 
   return (
     <>
      <h1 style={{margin: 15, textAlign: 'center', fontFamily:''}}>{text}</h1>
         <div className='container'>
             <div className='contain'>
-              <ItemListContainer categoryId="MLA1051" categoryName="CELULARES"/>
-              <ItemListContainer categoryId="MLA5726" categoryName="HOGAR"/>
-              <ItemListContainer categoryId="MLA1276" categoryName="DEPORTES"/>
+              <ItemListContainer/>
+              
             </div>
         </div>
     </>

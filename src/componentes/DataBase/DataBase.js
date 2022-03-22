@@ -6,7 +6,7 @@ export const DataBase = () => {
 
     useEffect(()=>{
         const getData = async()=>{
-            const query = collection(db, 'items');
+            const query = collection(db, 'Items');
             const response = await getDocs(query);
             const data = response.docs.map(doc=>doc.data())
             console.log('data', data);
@@ -22,3 +22,5 @@ export const DataBase = () => {
     </div>
   )
 }
+
+

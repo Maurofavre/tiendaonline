@@ -4,27 +4,16 @@ import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList/ItemList' 
 import { collection,getDocs } from 'firebase/firestore';
 import { db } from '../utils/firebases';
-import { useParams } from 'react-router-dom';
-import { Spinner } from 'react-bootstrap';
+// import { useParams } from 'react-router-dom';
+// import { Spinner } from 'react-bootstrap';
 
 
 export const ItemListContainer = ({}) =>{
   
-    const [Items, setItems] = useState([]);
-    const [load, setLoad] = useState (true)
-    const {categoryId} = useParams() 
+    const [items, setItems] = useState([]);
+//  const [load, setLoad] = useState (true)
+    // const {categoryId} = useParams() 
 
-    // useEffect(() => {
-    //   db();
-    // }, [categoryId]);
-  
-    // async function db() {
-    //   const call = await fetch(
-    //     `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=8 `
-    //   );
-    //   const result = await call.json();
-    //   setProducst(result.results);
-    // }
 
     const getData = async()=>{
         try{
@@ -42,6 +31,31 @@ export const ItemListContainer = ({}) =>{
   
 
 
+
+ useEffect(()=>{
+         getData()
+ } )
+
+ console.log('items: ', items);
+    
+
+
+
+
+  return(
+    <>  
+    <div style={{textAlign: 'center'}}>             
+       <div className="container">
+            <div className="row">
+                    <ItemList items={items}/>
+            </div>
+        </div>
+    </div>
+    </>
+)
+}
+
+
 //   const getDataCategory = async(categoryId)=>{
 //     try{
 //         const productosCollection = collection(db, 'items');
@@ -54,32 +68,19 @@ export const ItemListContainer = ({}) =>{
 //         } 
 // }
 
-useEffect(()=>{
-        getData()
-}, [categoryId])
-
-// console.log('productos: ', productos);
-    
 
 
-
-
-  return(
-    <>  
-    <div style={{textAlign: 'center'}}>             
-       <div className="container">
-            <div className="row">
-                    <ItemList items={Items}/>
-            </div>
-        </div>
-    </div>
-    </>
-)
-}
-
-
-
-
+    // useEffect(() => {
+    //   db();
+    // }, [categoryId]);
+  
+    // async function db() {
+    //   const call = await fetch(
+    //     `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=8 `
+    //   );
+    //   const result = await call.json();
+    //   setProducst(result.results);
+    // }
 
 
 
