@@ -1,43 +1,57 @@
-import { ItemDetail } from '../ItemDetail/ItemDetail'
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import '../ItemListContainer/ItemListContainer.css'  
+import { useParams } from 'react-router-dom' 
+import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../utils/firebases'
 
 
-
-
- 
  export const ItemDetailContainer = () => {
 
-const [item, setItems] =  useState([])
-const [loading, setLoading ] = useState (true)
-const params = useParams()
+    const [selectedItem, setSelectedItem] = useState([]) 
+    const [loading, setLoading] = useState(true)
+    const {id} = useParams()
 
-useEffect(() => {
-    setTimeout(()=>{ 
-        fetch(`https://api.mercadolibre.com/items/${params.id}`)
-        .then((response) => response.json())
-        .then(respJSON => {setItems(respJSON); setLoading(false)})
-    
-    }, 500)
-}, [params.id])
-     
+   const getSelected = async () =>{
+        try{
+            const document = doc(db, 'Items', id);
+            const response = await getDoc(document);
+            const result = {id: response.id, ...response.data()}
+            setSelectedItem(result) 
+            setLoading(false)
+            } catch (error) {
+                console.warn("error", error);
+            } 
+    }
+      
+    useEffect(()=>{
+        getSelected()
+    }, [id])
+
     return(
-        <>   
-
-            {
-                loading 
-                ? 
-                <p>Cargando...</p>
-                :
+        <>    
+             
+            {loading ? 
+                <h2 style={{textAlign:"center", margin:'1rem'}}>Loading...</h2>
+             : 
                 <div>
-                    <ItemDetail item = {item}/>
-               </div>
-                
+                    <ItemDetail item={selectedItem} />
+                </div>
             }
-
-
-         
-            
         </>
      )
 }
+
+
+
+
+
+// useEffect(() => {
+//     setTimeout(()=>{ 
+//         fetch(`https://api.mercadolibre.com/items/${params.id}`)
+//         .then((response) => response.json())
+//         .then(respJSON => {setItems(respJSON); setLoading(false)})
+    
+//     }, 500) 
+// }, [params.id])
+     

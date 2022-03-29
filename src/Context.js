@@ -1,6 +1,6 @@
 import React, {createContext} from 'react'
 import { useState } from 'react';
-import App from './App';
+
 
 export const CartContext = createContext([]);
 
@@ -13,19 +13,22 @@ const [items,setItems] = useState ([])
  const found = items.find(item=>item.id === id); 
  return found
  }
-  
-const addItem = (item, count) => { 
+
+
+ const addItem = (item, count) =>{  
+    
   isInCart(item.id)
-      ?
-      setItems(items.map((prod)=>{
-        if (prod.id === item.id) {
-         prod.count += count
-        }
-        return prod
-      }))
-      :
-       setItems([...items, {id: item.id, name: item.title, price: item.price, thumbnail:item.thumbnail, count: count}])
-      console.log(items);
+  ?
+  setItems(items.map((prod)=>{
+    if (prod.id === item.id) {
+     prod.count += count
+    }
+    return prod
+  }))
+  :
+  setItems([...items, {...item, count: count}])
+  //  setItems([...items, {id: item.id, name: item.title, price: item.price, count: count}])
+  console.log(items);
 }
 
 

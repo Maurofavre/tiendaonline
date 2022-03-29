@@ -16,17 +16,28 @@ const {items, addItem} = useContext(CartContext)
 
 items.map((item)=> (
          
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">CANTIDAD</th> 
+      <th scope="col">PRODUCTO</th>
+      <th scope="col">PRODUCTO</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+            <th scope="row"> {item.count} </th>
+            <td> {item.title} </td>
+            <td> <img src={item.pictureUrl} style= {{width: 150}} alt="imagen" />  </td>
+            
+            <td> {item.price} </td>
+          </tr>
+  
+  </tbody>
+</table>
          
-         
-         <center> <div  key={item.id} className='row justify-content-center'>
-
-          <h3>{item.name}</h3>
-          <p>Total=$ ( {item.price} x {item.count} )</p>
-          <h5> Cantidad=  {item.count}</h5>
-          <img src={item.thumbnail} alt="foto" style={{ width: 200 }} />
-
-
-          </div></center>
+        
 ))
 
   }

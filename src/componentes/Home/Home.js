@@ -5,20 +5,18 @@ export const Home = () => {
 
     const text = 'JUAN LAMBERTUCCI SRL'
 
-  return (
-    <>
-     <h1 style={{margin: 15, textAlign: 'center', fontFamily:''}}>{text}</h1>
-        <div className='container'>
-            <div className='contain'>
-              <ItemListContainer/>
-              
-            </div>
-        </div>
-    </>
-  )
-}
-
-
+    return (
+      <>
+       <h1 style={{margin: 15, textAlign: 'center'}}>{text}</h1>
+          <div className='container'>
+              <div className='contain'>
+                  <ItemListContainer categoryId="MLA1051" categoryName="Celulares"/>
+  
+              </div>
+          </div>
+      </>
+    )
+  }
 
 
 

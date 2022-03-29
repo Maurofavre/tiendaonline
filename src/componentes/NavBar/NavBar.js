@@ -36,16 +36,10 @@ export default class NavbarComp extends Component {
                         <NavDropdown.Item href='equipos/promo'>Promociones</NavDropdown.Item>
                         </NavDropdown>
 
-                        <Link style={{color:'white', fontSize:18, padding:5}} to="/">Home</Link>
-
-                        <Link style={{color:'white', fontSize:18, padding:5}} to="/category/MLA1051/Automovil">Automovil</Link>
-
-                        <Link style={{color:'white', fontSize:18, padding:5}} to="/category/MLA1648/Tecnologia">Tecnologia</Link>
-
-
-                        <Link style={{color:'white', fontSize:18, padding:5}} to="/category/MLA1144/Libros">Libros</Link>
-
-                        <Link style={{color:'white', fontSize:18, padding:5}} to="/cart">Carrito</Link> 
+                        <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/">Home</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/herrajes">Herrajes</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/Machimbres">Machimbres</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/cart">Carrito</Link>
                         
                         <CartWidget/>
                     </Nav>

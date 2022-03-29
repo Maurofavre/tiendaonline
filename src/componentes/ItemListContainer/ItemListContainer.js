@@ -2,9 +2,9 @@ import '../ItemListContainer/ItemListContainer.css'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { ItemList } from '../ItemList/ItemList' 
-import { collection,getDocs } from 'firebase/firestore';
+import { collection, doc, query, where, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../utils/firebases';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // import { Spinner } from 'react-bootstrap';
 
 
@@ -12,7 +12,7 @@ export const ItemListContainer = ({}) =>{
   
     const [items, setItems] = useState([]);
 //  const [load, setLoad] = useState (true)
-    // const {categoryId} = useParams() 
+    const {categoryId} = useParams() 
 
 
     const getData = async()=>{
@@ -29,13 +29,24 @@ export const ItemListContainer = ({}) =>{
             } 
     }
   
+    const getDataCategory_query = async()=>{
+        try{
+            const q = query(collection(db, 'items'), where('category', '===', 'categoryId'));
+            const querySnapShot = await getDocs(q)
+             
+            setItems(querySnapShot.docs.map(doc=> doc = {id: doc.id, ...doc.data()})) 
 
+            } catch (error) {
+                console.warn("error", error);
+            } 
+    }
 
-
- useEffect(()=>{
-         getData()
- } )
-
+    useEffect(()=>{
+        categoryId ?
+            getDataCategory_query() :
+            getData()
+    }, [categoryId])
+    
  console.log('items: ', items);
     
 
