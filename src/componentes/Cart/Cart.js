@@ -22,6 +22,7 @@ const sendOrder =  async(e) => {
           phone: e.target[1].value,
           email: e.target[2].value,
         },
+        productos: items, 
 
       }
       console.log('order', order);
