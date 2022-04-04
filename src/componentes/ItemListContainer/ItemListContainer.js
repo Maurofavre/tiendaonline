@@ -23,7 +23,6 @@ export const ItemListContainer = ({}) =>{
             setItems(result)
             
            
-
             }  catch (error) {
                 console.warn("error", error);
             } 
@@ -65,35 +64,6 @@ export const ItemListContainer = ({}) =>{
     </>
 )
 }
-
-
-//   const getDataCategory = async(categoryId)=>{
-//     try{
-//         const productosCollection = collection(db, 'items');
-//         const response = await getDocs(productosCollection);
-//         const result = response.docs.map(doc=>{return {id: doc.id, ...doc.data()}})
-//         setProductos(result.filter(e=>e.categoryId === categoryId)) 
-
-//         } catch (error) {
-//             console.warn("error", error);
-//         } 
-// }
-
-
-
-    // useEffect(() => {
-    //   db();
-    // }, [categoryId]);
-  
-    // async function db() {
-    //   const call = await fetch(
-    //     `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}&limit=8 `
-    //   );
-    //   const result = await call.json();
-    //   setProducst(result.results);
-    // }
-
-
 
 
 

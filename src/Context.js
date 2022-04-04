@@ -9,6 +9,7 @@ export const CartProvider = ({children}) => {
 
 const [items,setItems] = useState ([])
 
+
  const isInCart = (id) => {
  const found = items.find(item=>item.id === id); 
  return found
@@ -31,11 +32,28 @@ const [items,setItems] = useState ([])
   console.log(items);
 }
 
+const removeItem = (id) => {
+  
+setItems(items.filter(item=> item.id !== id))
+
+}
+
+const clearItems = () =>{ 
+
+  setItems([])
+
+}
+
+
+const totalCart = () => {
+  return items.reduce( (acum, valor) => acum + valor.quantity * valor.item.precio, 0);
+};
+
 
 return (
 
 
-  <CartContext.Provider value ={{items,addItem}}>
+  <CartContext.Provider value ={{items,addItem,removeItem,clearItems, totalCart}}>
     {children}
   </CartContext.Provider>
 )

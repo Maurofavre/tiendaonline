@@ -27,7 +27,7 @@ import '../ItemListContainer/ItemListContainer.css'
                            add  ?
                                 <div>Añadido!</div>
                                 :
-                                <ItemCount item={item} stock={5} initial={0} addItem={addItem}/>   
+                                <ItemCount item={item} stock={item.stock} initial={item.stock >= 1 ? 1 : 0} addItem={addItem}/>   
                        }
                         <br/>
                         <Link to="/cart" style={{margin:'10px'}} type="button" className="btn btn-outline-primary">
