@@ -40,7 +40,7 @@ setItems(items.filter(item=> item.id !== id))
 
 const clearItems = () =>{ 
 
-  setItems([])
+  setItems([]);
 
 }
 

@@ -7,6 +7,7 @@ import { Home } from "./componentes/Home/Home";
 import {Cart} from "./componentes/Cart/Cart";
 import { CartProvider } from "./Context";
 import {Category} from "./views/Category"
+import { ItemListContainer } from "./componentes/ItemListContainer/ItemListContainer";
 
 
 
@@ -24,7 +25,7 @@ function App() {
             
             <Route path="/" element={<Home/>} />
             <Route path="/items/:id" element={<ItemDetailContainer/>} />
-            <Route exact path='category/:categoryId' element={<Category/>}/>
+            <Route exact path='catego' element={<ItemListContainer/>}/>
             <Route path="/cart" element={<Cart/>} />
             <Route path="/contexto" element={<CartProvider/>} />
           

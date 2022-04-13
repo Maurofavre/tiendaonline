@@ -27,18 +27,12 @@ export default class NavbarComp extends Component {
                     <Navbar.Toggle />
                     <Navbar.Collapse>
                     <Nav  style={{alignItems:'center'}}>
-                        <NavDropdown title='Productos'>
-                        <NavDropdown.Item href='equipos/machimbres'>Machimbres</NavDropdown.Item>
-                        <NavDropdown.Item href='equipos/vigas'>VIGAS</NavDropdown.Item>
-                        <NavDropdown.Item href='equipos/herrajes'>HERRAJES</NavDropdown.Item>
-                        
-                        <NavDropdown.Divider/>
-                        <NavDropdown.Item href='equipos/promo'>Promociones</NavDropdown.Item>
+                        <NavDropdown title='Juan Lambertucci'>
                         </NavDropdown>
 
                         <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/">Home</Link>
-                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/rajes">Herrajes</Link>
-                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/Machimbres">Machimbres</Link>
+                            {/* <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/herrajes">Herrajes</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/category/Machimbres">Machimbres</Link> */}
                             <Link style={{ textDecoration: 'none', color: 'white', fontSize: 17, padding: 5, margin: 5 }} to="/cart">Carrito</Link>
                         
                         <CartWidget/>
